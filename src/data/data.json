@@ -1,0 +1,192 @@
+{
+  "projects": [
+    {
+      "id": "projet-1",
+      "title": "Forward Data Conference",
+      "category": "Sites web",
+      "tags": ["Site web", "Identité graphique"],
+      "description": "Événement international axé sur les aspects techniques de la data et de l'IA. Destiné aux professionnels de la tech, il aborde des sujets tels que le data engineering, le MLOps et les architectures modernes de données.",
+      "mainImage": "/images/FWDmain.avif",
+      "websiteUrl": "https://www.forward-data-conference.com/en",
+      "achievements": [
+        "création du site web en accord avec la charte graphique",
+        "Assets prints pour le jour de la conférence"
+      ],
+      "techStack": ["Webflow", "Typescript"],
+      "relatedProjects": ["projet-2", "projet-3", "projet-4"]
+    },
+    {
+      "id": "projet-2",
+      "title": "Hymaïa",
+      "category": "Sites web",
+      "tags": ["Identité graphique", "Site web"],
+      "description": "Cabinet de conseil parisien spécialisé dans la stratégie, l'ingénierie et la culture produit autour de la data et de l'IA. Hymaïa accompagne les entreprises dans la création de produits data robustes, de plateformes IA et dans lacculturation des équipes aux enjeux technologiques",
+      "mainImage": "/images/hymaiaMain.avif",
+      "secondaryImages": ["/images/hymaia1.avif", "/images/hymaia2.avif"],
+      "websiteUrl": "https://www.hymaia.com/",
+      "achievements": [
+        "refonte du site web",
+        "parcours de conversion (partie formations) "
+      ],
+      "techStack": ["Webflow", "Javascript"],
+      "relatedProjects": ["projet-1", "projet-3", "projet-5"]
+    },
+    {
+      "id": "projet-3",
+      "title": "AI Product Day",
+      "category": "Sites web",
+      "tags": ["Portfolio", "Creative", "Animation"],
+      "description": "Conférence dédiée aux équipes produit souhaitant intégrer l'intelligence artificielle dans leurs processus et solutions. Lévénement met en lumière les meilleures pratiques pour concevoir des produits augmentés par lIA",
+      "mainImage": "/images/AIPDmain.avif",
+      "secondaryImages": ["/images/AIPD1.avif", "/images/AIPD2.avif"],
+      "websiteUrl": "https://www.ai-product-day.com/en",
+      "achievements": [
+        "création du site web en accord avec la charte graphiques",
+        "Assets prints pour le jour de la conférence"
+      ],
+      "techStack": ["Webflow", "Adobe Illustrator", "Adobe Photoshop"],
+      "relatedProjects": ["projet-1", "projet-2", "projet-4"]
+    },
+    {
+      "id": "projet-4",
+      "title": "Outsight",
+      "category": "Sites web",
+      "tags": ["Site Web"],
+      "description": "Entreprise deeptech spécialisée dans la perception 3D en temps réel grâce à des solutions LiDAR. Le site présente leurs produits et cas d'usage dans des secteurs variés comme la mobilité, la sécurité et l'industrie.",
+      "mainImage": "/images/OutisghtMain.avif",
+      "secondaryImages": ["/images/Outsight1.webp", "/images/Outsight2.webp"],
+      "websiteUrl": "https://www.outsight.ai/",
+      "achievements": [
+        "parcours UX sur Figma",
+        "création du site web "
+      ],
+      "techStack": ["Webflow", "Figma"],
+      "relatedProjects": ["projet-1", "projet-2", "projet-3"]
+    },
+    {
+      "id": "projet-5",
+      "title": "Identités graphiques ",
+      "category": "Identités graphiques",
+      "tags": ["Branding", "Logo", "Startup"],
+      "description": "Création d'identité visuelle complète pour une startup technologique.",
+      "mainImage": "/images/brand1-main.jpg",
+      "secondaryImages": ["/images/brand1-1.jpg", "/images/brand1-2.jpg"],
+      "achievements": [
+        "Logo et variations",
+        "Charte graphique complète",
+        "Applications digitales",
+        "Guidelines brand"
+      ],
+      "techStack": ["Figma", "Adobe Illustrator", "Adobe InDesign"],
+      "relatedProjects": ["projet-6", "projet-7", "projet-8"]
+    },
+    {
+      "id": "projet-6",
+      "title": "Branding Restaurant",
+      "category": "Identités graphiques",
+      "tags": ["Restaurant", "Branding", "Print"],
+      "description": "Identité visuelle pour un restaurant gastronomique avec supports print et digital.",
+      "mainImage": "/images/brand2-main.jpg",
+      "secondaryImages": ["/images/brand2-1.jpg", "/images/brand2-2.jpg"],
+      "achievements": [
+        "Identité visuelle complète",
+        "Menu design",
+        "Signalétique",
+        "Supports marketing"
+      ],
+      "techStack": ["Adobe Creative Suite", "Figma", "Print Design"],
+      "relatedProjects": ["projet-5", "projet-7", "projet-8"]
+    }
+  ],
+  "services": [
+    {
+      "title": "CONSEIL & STRATÉGIE DIGITALE",
+      "description": "Accompagnement dans le choix des outils (no-code, IA, CMS...), définition des besoins, et structuration de l'information pour des expériences web fluides et efficaces."
+    },
+    {
+      "title": "UX/UI & DESIGN PRODUIT",
+      "description": "Parcours utilisateurs optimisés, maquettes interactives sur Figma, interfaces claires et identités visuelles digitales."
+    },
+    {
+      "title": "CRÉATION DE SITES NO-CODE + IA",
+      "description": "Conception et développement de sites sur Webflow, Framer, etc. Génération de contenu assistée par IA pour accélérer la création et tester des variantes plus rapidement."
+    }
+  ],
+  "timeline": [
+    {
+      "period": "SEPT 2017 - JUIN 2018",
+      "title": "Hypokhâgne",
+      "institution": "Lycée Condorcet, Paris"
+    },
+    {
+      "period": "SEPT 2018 - JUIN 2019",
+      "title": "L2, Histoire de l'art et Archéologie",
+      "institution": "Paris 1 Panthéon-Sorbonne"
+    },
+    {
+      "period": "SEPT 2019 - JUIN 2020",
+      "title": "L3, Histoire de l'art et Archéologie",
+      "institution": "Toulouse 2 Jean Jaurès"
+    },
+    {
+      "period": "SEPT 2020 - JUIN 2021",
+      "title": "L1, Droit",
+      "institution": "Paris 2 Panthéon-Assas"
+    },
+    {
+      "period": "SEPT 2021 - AVRIL 2022",
+      "title": "L2, Droit",
+      "institution": "Paris 2 Panthéon-Assas"
+    },
+    {
+      "period": "AVRIL 2022 - SEPT 2023",
+      "title": "Formation autodidacte en graphisme, Débuts Freelance",
+      "institution": "Autoformation"
+    },
+    {
+      "period": "SEPT 2023 - JUIN 2025",
+      "title": "Alternance intégratrice Web",
+      "institution": "Open Classroom & Hymaïa, Paris"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "QUELLE EST TA MÉTHODE DE TRAVAIL ?",
+      "answer": "Je commence par comprendre vos objectifs et votre audience. Ensuite, je conçois une stratégie digitale adaptée, crée des maquettes interactives, puis développe votre site en utilisant les meilleurs outils no-code. Je vous accompagne jusqu'à la mise en ligne et au-delà."
+    },
+    {
+      "question": "QUEL EST LE DÉLAI MOYEN POUR UN PROJET ?",
+      "answer": "Les délais varient selon la complexité : 2-3 semaines pour un site vitrine, 4-6 semaines pour un site e-commerce, et 6-8 semaines pour des projets sur-mesure. Je m'adapte à vos contraintes temporelles."
+    },
+    {
+      "question": "TRAVAILLES-TU UNIQUEMENT AVEC WEBFLOW / FRAMER ?",
+      "answer": "Principalement oui, car ces outils offrent une flexibilité créative exceptionnelle. Cependant, je peux aussi travailler avec d'autres plateformes selon vos besoins spécifiques."
+    },
+    {
+      "question": "PROPOSES-TU UN ACCOMPAGNEMENT APRÈS LA MISE EN LIGNE ?",
+      "answer": "Absolument ! Je propose des forfaits de maintenance, des formations pour gérer votre site, et je reste disponible pour toute évolution future de votre projet."
+    }
+  ],
+  "socialLinks": [
+    {
+      "name": "Behance",
+      "url": "https://www.behance.net/sarah-sthouabt",
+      "icon": "behance"
+    },
+    {
+      "name": "Dribbble",
+      "url": "https://dribbble.com/Sarah-Sophie",
+      "icon": "dribbble"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/sarah-sophie-thouabtia/",
+      "icon": "linkedin"
+    },
+    {
+      "name": "Medium",
+      "url": "https://medium.com/",
+      "icon": "medium"
+    }
+  ]
+} 
