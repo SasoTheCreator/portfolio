@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   to,
   onClick,
   className = '',
-}) => {
+}: ButtonProps) => {
   const baseClasses = 'inline-flex items-center justify-center px-6 py-3 text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
   
   const variantClasses = {
