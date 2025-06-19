@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-black text-white">
-      <div className="container-max py-8 md:px-12 lg:px-8 px-4">
+      <div className="container-max py-8 md:px-12 lg:px-10 px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 py-4">
           {/* CTA Section */}
           <div className="space-y-6">
@@ -27,13 +27,14 @@ const Footer: React.FC = () => {
             <div>
               <div className="flex space-x-4 justify-start flex-wrap  md:justify-end">
                 {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white "
-                  >
+                                  <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Suivre sur ${social.name}`}
+                  className="text-white hover:text-gray-300 transition-colors"
+                >
                     {social.name}
                   </a>
                 ))}

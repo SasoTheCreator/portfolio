@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import data from '../data/data.json';
 import { Project } from '../types';
+import Button from '../components/Button';
+
 
 const ProjectsPage: React.FC = () => {
   const { projects } = data as { projects: Project[] };
@@ -24,8 +26,8 @@ const ProjectsPage: React.FC = () => {
               Mes Projets
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
-              Découvrez une sélection de mes réalisations, alliant créativité, 
-              technique et stratégie pour créer des expériences digitales uniques.
+              Une sélection de mes réalisations, alliant créativité et
+              technique. Je vous accompagne toute au long de votre projet, des réflexions stratégiques aux détails interactifs.
             </p>
           </motion.div>
         </div>
@@ -89,7 +91,7 @@ const ProjectsPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center bg-gray-900 rounded-4xl p-12 md:p-16"
+            className="text-center bg-black p-12 md:p-16"
           >
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Prêt à créer quelque chose d'exceptionnel ?
@@ -97,12 +99,9 @@ const ProjectsPage: React.FC = () => {
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Transformons ensemble votre vision en réalité digitale.
             </p>
-            <a
-              href="/contact"
-              className="inline-flex items-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
-            >
-              Commencer un projet
-            </a>
+            <Button to="/contact" variant="secondary">
+                  Commencer un projet
+                </Button>
           </motion.div>
         </div>
       </section>

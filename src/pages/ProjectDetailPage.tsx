@@ -1,13 +1,14 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRightIcon, LinkIcon } from '@heroicons/react/24/outline';
 import ProjectCard from '../components/ProjectCard';
+import Tag from '../components/Tag';
 import data from '../data/data.json';
 import { Project } from '../types';
+import Button from '../components/Button';
 
 const ProjectDetailPage: React.FC = () => {
-  const { projects } = data as { projects: Project[] };
+  const { projects, techIcons } = data as { projects: Project[]; techIcons: { [key: string]: string } };
   const { id } = useParams<{ id: string }>();
   const project = projects.find(p => p.id === id);
 
@@ -31,7 +32,7 @@ const ProjectDetailPage: React.FC = () => {
   return (
     <div className="pt-20">
       {/* Header Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+      <section className="px-10 md:px-12 lg:px-10 py-10 md:py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
@@ -43,12 +44,9 @@ const ProjectDetailPage: React.FC = () => {
               {/* Tags */}
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
-                  >
+                  <Tag key={tag}>
                     {tag}
-                  </span>
+                  </Tag>
                 ))}
               </div>
 
@@ -65,13 +63,13 @@ const ProjectDetailPage: React.FC = () => {
               {/* Website Link */}
               {project.websiteUrl && (
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a
+                  <a 
                     href={project.websiteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-primary flex items-center"
+                    aria-label={`Voir le site web de ${project.title} (s'ouvre dans un nouvel onglet)`}
+                    className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-white border border-black text-black focus:ring-black hover:bg-gray-50"
                   >
-                    <LinkIcon className="mr-2 h-5 w-5" />
                     Voir le site web
                   </a>
                 </div>
@@ -85,15 +83,12 @@ const ProjectDetailPage: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="aspect-square rounded-4xl bg-gradient-to-br from-gray-200 to-gray-300 overflow-hidden">
-                <div className="flex items-center justify-center h-full">
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">🎨</div>
-                    <div className="text-lg font-medium text-gray-600">
-                      {project.title}
-                    </div>
-                  </div>
-                </div>
+              <div className="aspect-square  overflow-hidden">
+                <img 
+                  src={project.mainImage} 
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
           </div>
@@ -101,41 +96,40 @@ const ProjectDetailPage: React.FC = () => {
       </section>
 
       {/* Secondary Images */}
-      <section className="section-padding">
-        <div className="container-max">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {project.secondaryImages.map((image, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="aspect-square rounded-2xl bg-gradient-to-br from-gray-200 to-gray-300 overflow-hidden"
-              >
-                <div className="flex items-center justify-center h-full">
-                  <div className="text-center">
-                    <div className="text-4xl mb-2">📸</div>
-                    <div className="text-sm font-medium text-gray-600">
-                      Image {index + 1}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+      {project.secondaryImages && project.secondaryImages.length > 0 && (
+        <section className="px-10 md:px-12 lg:px-10">
+          <div className="container-max">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {project.secondaryImages.map((image, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="aspect-square overflow-hidden"
+                >
+                  <img 
+                    src={image} 
+                    alt={`${project.title} - Détail ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* About Project Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-gray-100 mt-10 md:mt-12 lg:mt-16">
         <div className="container-max">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center"
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 "
           >
             À propos du projet
           </motion.h2>
@@ -180,16 +174,17 @@ const ProjectDetailPage: React.FC = () => {
               <h3 className="text-2xl font-bold text-gray-900">Stack technique</h3>
               <div className="flex flex-wrap gap-3">
                 {project.techStack.map((tech, index) => (
-                  <motion.span
+                  <motion.div
                     key={tech}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="px-4 py-2 bg-white rounded-lg shadow-sm border border-gray-200 text-gray-700 font-medium"
                   >
-                    {tech}
-                  </motion.span>
+                    <Tag iconSrc={techIcons && techIcons[tech]}>
+                      {tech}
+                    </Tag>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -207,16 +202,14 @@ const ProjectDetailPage: React.FC = () => {
             viewport={{ once: true }}
             className="flex items-center justify-between mb-12"
           >
+            <div className="w-full flex flex-col gap-4 items-start md:flex-row md:justify-between md:items-center">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Découvrir d'autres projets
             </h2>
-            <Link
-              to="/projets"
-              className="flex items-center text-gray-600 hover:text-gray-900 transition-colors group"
-            >
-              <span className="text-lg font-medium">Tous les projets</span>
-              <ArrowRightIcon className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+<Button to="/projets" variant="secondary">
+  Tous les projets
+</Button>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

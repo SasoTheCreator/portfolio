@@ -65,39 +65,42 @@
     },
     {
       "id": "projet-5",
-      "title": "Identités graphiques ",
+      "title": "Domaine du Vertige",
       "category": "Identités graphiques",
-      "tags": ["Branding", "Logo", "Startup"],
-      "description": "Création d'identité visuelle complète pour une startup technologique.",
-      "mainImage": "/images/brand1-main.jpg",
-      "secondaryImages": ["/images/brand1-1.jpg", "/images/brand1-2.jpg"],
+      "tags": ["Identité graphique", "Site web"],
+      "mainImage": "/images/DVmain.avif",
+      "secondaryImages": ["/images/DV1.avif", "/images/DV2.avif"],
       "achievements": [
-        "Logo et variations",
-        "Charte graphique complète",
-        "Applications digitales",
-        "Guidelines brand"
+        "Création de l'identité graphique ",
+        "Maquettes Figma pour le future site web"
       ],
-      "techStack": ["Figma", "Adobe Illustrator", "Adobe InDesign"],
+      "techStack": ["Figma", "Adobe Illustrator"],
       "relatedProjects": ["projet-6", "projet-7", "projet-8"]
     },
     {
       "id": "projet-6",
-      "title": "Branding Restaurant",
+      "title": "Locasmart",
       "category": "Identités graphiques",
-      "tags": ["Restaurant", "Branding", "Print"],
-      "description": "Identité visuelle pour un restaurant gastronomique avec supports print et digital.",
-      "mainImage": "/images/brand2-main.jpg",
-      "secondaryImages": ["/images/brand2-1.jpg", "/images/brand2-2.jpg"],
+      "tags": ["Branding"],
+      "description": "Identité visuelle pour une application SAAS",
+      "mainImage": "/images/locasmartMain.avif",
+      "secondaryImages": ["/images/locasmart2.webp", "/images/locasmart3.webp"],
       "achievements": [
-        "Identité visuelle complète",
-        "Menu design",
-        "Signalétique",
-        "Supports marketing"
+        "Création de l'identité graphique"
       ],
-      "techStack": ["Adobe Creative Suite", "Figma", "Print Design"],
+      "techStack": ["Adobe Illustrator", "Procreate"],
       "relatedProjects": ["projet-5", "projet-7", "projet-8"]
     }
   ],
+  "techIcons": {
+    "Webflow": "/images/Webflowlogo.svg",
+    "Figma": "/images/Figmalogo.svg",
+    "Typescript": "/images/TPlogo.svg",
+    "Javascript": "/images/JSlogo.avif",
+    "Adobe Illustrator": "/images/AIlogo.svg",
+    "Adobe Photoshop": "/images/APlogo.svg",
+    "Procreate": "/images/procreate.svg"
+  },
   "services": [
     {
       "title": "CONSEIL & STRATÉGIE DIGITALE",

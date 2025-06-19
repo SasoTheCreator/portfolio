@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import data from '../data/data.json';
 import { TimelineItem, FAQItem } from '../types';
+import ServicesSection from '../components/ServicesSection';
 
 const AboutPage: React.FC = () => {
   const { timeline, faqItems } = data as { timeline: TimelineItem[]; faqItems: FAQItem[] };
@@ -38,7 +39,7 @@ const AboutPage: React.FC = () => {
       {/* Photo & Quote Section */}
       <section className="section-padding">
         <div className="container-max">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 md:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -46,15 +47,12 @@ const AboutPage: React.FC = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="aspect-square rounded-4xl bg-gradient-to-br from-gray-200 to-gray-300 overflow-hidden">
-                <div className="flex items-center justify-center h-full">
-                  <div className="text-center">
-                    <div className="text-8xl mb-4">👩‍🎨</div>
-                    <div className="text-lg font-medium text-gray-600">
-                      Sarah-Sophie
-                    </div>
-                  </div>
-                </div>
+              <div className="aspect-square overflow-hidden w-full rounded-full ">
+                <img 
+                  src="/images/saso2.avif" 
+                  alt="Sarah-Sophie Thouabtia" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
 
@@ -65,9 +63,9 @@ const AboutPage: React.FC = () => {
               viewport={{ once: true }}
               className="space-y-8"
             >
-              <blockquote className="text-2xl md:text-3xl font-medium text-gray-900 leading-relaxed">
-                "Loin des templates impersonnels, je conçois des parcours pensés 
-                pour convertir, raconter et évoluer."
+              <blockquote className=" md:text-2xl font-medium text-gray-900 leading-relaxed italic">
+                Loin des templates impersonnels, je conçois des parcours pensés 
+                pour convertir, raconter et évoluer.
               </blockquote>
             </motion.div>
           </div>
@@ -75,55 +73,12 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Parcours Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-max">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">
-              Mon parcours
-            </h2>
-            <p className="text-xl text-gray-600 leading-relaxed mb-16 text-center">
-              Mon parcours mêle histoire de l'art, archéologie et droit — un vrai mélange 
-              qui m'a donné une ouverture d'esprit et une rigueur précieuse. Cette diversité 
-              m'a aidée à développer un regard à la fois créatif et analytique. Puis, je me 
-              suis formée en autodidacte et lancé mon aventure freelance. Après une belle 
-              expérience en alternance, je me lance en freelance en full time.
-            </p>
-
-            <div className="space-y-8">
-              {timeline.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 p-6 bg-white rounded-2xl shadow-sm"
-                >
-                  <div className="md:text-right">
-                    <span className="text-sm font-semibold text-gray-900 bg-gray-100 px-3 py-1 rounded-full">
-                      {item.period}
-                    </span>
-                  </div>
-                  <div className="md:col-span-3">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600">
-                      {item.institution}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <ServicesSection
+        title="Mon parcours"
+        description="Mon parcours mêle histoire de l'art, archéologie et droit — un vrai mélange qui m'a donné une ouverture d'esprit et une rigueur précieuse. Cette diversité m'a aidée à développer un regard à la fois créatif et analytique. Puis, je me suis formée en autodidacte et lancé mon aventure freelance. Après une belle expérience en alternance, je me lance en freelance en full time."
+        timelineItems={timeline}
+        className="bg-gray-50"
+      />
 
       {/* FAQ Section */}
       <section className="section-padding">
@@ -133,13 +88,13 @@ const AboutPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
+            className=" mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12">
               FAQ
             </h2>
 
-            <div className="space-y-4">
+            <div className="space-y-4 ">
               {faqItems.map((item, index) => (
                 <motion.div
                   key={index}
@@ -147,11 +102,10 @@ const AboutPage: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-2xl shadow-sm overflow-hidden"
                 >
                   <button
                     onClick={() => toggleFAQ(index)}
-                    className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                    className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors border border-solid border-black text-lg"
                   >
                     <h3 className="text-lg font-semibold text-gray-900 pr-4">
                       {item.question}
@@ -173,7 +127,7 @@ const AboutPage: React.FC = () => {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                        <div className="px-6 py-6 text-black text-lg">
                           {item.answer}
                         </div>
                       </motion.div>

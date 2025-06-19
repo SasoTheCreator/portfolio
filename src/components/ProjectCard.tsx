@@ -22,7 +22,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index = 0 }) => {
           {/* Project Image Background */}
           <img 
             src={project.mainImage} 
-            alt={project.title}
+            alt={`Aperçu du projet ${project.title}`}
             className="absolute inset-0 w-full h-full object-cover"
           />
           
