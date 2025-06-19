@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Button from './Button';
 import data from '../data/data.json';
 import { SocialLink } from '../types';
